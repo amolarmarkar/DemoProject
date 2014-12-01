@@ -1,0 +1,24 @@
+﻿@model DepartmentDemo.Models.Department
+
+@{
+    ViewBag.Title = "Department Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Department</legend>
+
+    <div class="display-label">
+        @* @Html.DisplayNameFor(model => model.Dept_Name)*@
+        @Html.DisplayName("Department Details : ")
+
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Dept_Name)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Dept_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

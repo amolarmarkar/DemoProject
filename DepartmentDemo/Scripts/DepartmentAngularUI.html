@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<!--<html xmlns="http://www.w3.org/1999/xhtml">-->
+<html ng-app="deptApp">
+<head>
+    <title>Using Angular UI - Router and JS Directives and Data Biding</title>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+    <script src="js/angular-ui-router.min.js"></script>
+    <script>
+        var myApp = angular.module('myApp', ['ui.router']);
+        // For Component users, it should look like this:
+        // var myApp = angular.module('myApp', [require('angular-ui-router')]);
+    </script>
+
+</head>
+<body>
+    
+    <div ui-view></div>
+    <!-- We'll also add some navigation: -->
+    <a ui-sref="state1">State 1</a>
+    <a ui-sref="state2">State 2</a>
+
+</body>
+</html>
+
+
+<!--<!DOCTYPE html>
+<html ng-app="demoApp">
+<head>
+    <title>Using Angular JS Directives and Data Biding</title>
+</head>
+<body>
+
+    <div ng-view=""></div>
+
+    <div ng-controller="SimpleController">
+        <div ng-view=""></div>
+    </div>
+
+    <script src="angular.min.js"></script>
+
+    <script>
+        var demoApp = angular.module('demoApp', []);
+
+        demoApp.config(function ($routeProvider) {
+            $routeProvider
+                .when('/view1',
+                {
+                    controller: 'SimpleController',
+                    templateUrl: 'Partials/View1.html'
+                })
+                .when('/view2',
+                {
+                    controller: 'SimpleController',
+                    templateUrl: 'Partials/View2.html'
+                })
+                .otherwise({ redirectTo: '/view1' });
+        });
+
+        //function SimpleController($scope) {
+        demoApp.controller('SimpleController', function ($scope) {
+            $scope.customers = [
+                { myname: 'John Smith', city: 'Phoenix' },
+                { myname: 'John Doe', city: 'New York' },
+                { myname: 'Jane Doe', city: 'San Francisco' }
+            ];
+        });
+
+        function addcustomer($scope) {
+            $scope.customers.push(
+            {
+                myname: $scope.myname.name
+            });
+        }
+    </script>
+
+</body>
+</html>-->
